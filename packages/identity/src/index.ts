@@ -19,6 +19,8 @@ export {
   SUPPORTED_CHAINS,
   REGISTRATION_TYPE,
 } from "./constants.js";
+export { findAllRegistrations } from "./multichain.js";
+export type { ChainRegistration } from "./multichain.js";
 export type {
   AgentService,
   AgentRegistrationFile,

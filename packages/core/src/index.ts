@@ -25,6 +25,7 @@ export {
   getMcpEndpoint,
   getA2aEndpoint,
   getAgentCount,
+  findAllRegistrations,
   IDENTITY_REGISTRY_ADDRESS,
   SUPPORTED_CHAINS,
 } from "@agent-stack/identity";
@@ -64,8 +65,9 @@ export {
   createAgentMcpClient,
   AgentMcpServerInstance,
   AgentMcpClientInstance,
+  probeAgent,
 } from "@agent-stack/data";
 
-export type { AgentMcpServerConfig, AgentMcpClientConfig } from "@agent-stack/data";
+export type { AgentMcpServerConfig, AgentMcpClientConfig, AgentProbeResult } from "@agent-stack/data";
 
 export type { AgentStackConfig, AgentStackRegisterOptions } from "./types.js";

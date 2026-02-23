@@ -368,6 +368,34 @@ await agent.stop();
 
 ---
 
+### Probe Agent (no wallet needed)
+
+```typescript
+import { probeAgent } from "@agent-stack/core";
+
+// Discover what an agent offers before connecting
+const info = await probeAgent("eip155:8453:0x8004...#2376");
+
+console.log(info.verified);         // true — on-chain verified
+console.log(info.owner);            // "0x1be93C..."
+console.log(info.endpoints.mcp);    // "https://mcp.agent.eth/mcp"
+console.log(info.acceptsPayment);   // true
+console.log(info.services);         // [{ name: "MCP", endpoint: "...", version: "2025-06-18" }]
+console.log(info.registrations);    // cross-chain IDs
+```
+
+### Multi-chain Discovery
+
+```typescript
+import { findAllRegistrations } from "@agent-stack/core";
+
+// Find all registrations for a wallet across all 16+ supported chains
+const regs = await findAllRegistrations("0x1be93C...");
+// Returns: [{ chainName: "Base", chainId: 8453, agentId: 2376, globalId: "eip155:8453:0x8004...#2376" }, ...]
+```
+
+---
+
 ## What's NOT in this SDK
 
 - **Reputation Registry** — posting/fetching feedback (planned v0.2)
