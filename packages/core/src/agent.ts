@@ -8,7 +8,8 @@ import { z } from "zod";
 import { AgentIdentity, verifyAgent, getMcpEndpoint, IDENTITY_REGISTRY_ADDRESS } from "@agent-stack/identity";
 import type { VerificationResult } from "@agent-stack/identity";
 import { PaymentClient } from "@agent-stack/payments";
-import { AgentMcpServerInstance, createAgentMcpClient } from "@agent-stack/data";
+import { AgentMcpServerInstance, createAgentMcpClient, probeAgent } from "@agent-stack/data";
+import type { AgentProbeResult } from "@agent-stack/data";
 import type { AgentMcpClientInstance } from "@agent-stack/data";
 import type { AgentStackConfig, AgentStackRegisterOptions } from "./types.js";
 
@@ -184,6 +185,15 @@ export class AgentStack {
    */
   async verify(agentGlobalId: string): Promise<VerificationResult> {
     return verifyAgent(agentGlobalId);
+  }
+
+  /**
+   * Probe another agent — discover capabilities without connecting.
+   * Returns identity, endpoints, payment requirements, services.
+   * Read-only, no wallet needed for the target agent.
+   */
+  async probe(agentGlobalId: string): Promise<AgentProbeResult> {
+    return probeAgent(agentGlobalId);
   }
 
   /**

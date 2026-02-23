@@ -13,6 +13,9 @@
       "require": "./dist/index.cjs"
     }
   },
+  "bin": {
+    "agent-id": "./bin/agent-id.ts"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --outDir dist",
     "typecheck": "tsc --noEmit"
