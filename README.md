@@ -12,7 +12,7 @@ The agent infra stack has three layers being built by different teams with no co
 
 | Layer | Tech | Status |
 |-------|------|--------|
-| **Identity** | ERC-8004 (on-chain agent registration) | Deployed on 16+ chains, no SDK |
+| **Identity** | ERC-8004 (on-chain agent registration) | Deployed on 17+ chains, no SDK |
 | **Payments** | x402 protocol, Circle USDC | npm packages exist, no agent integration |
 | **Data** | MCP servers, onchain oracles | SDK exists, no identity/payment layer |
 
@@ -339,8 +339,8 @@ await agent.stop();
 
 ### Our Deployments
 
-- Registered on 16 chains (Ethereum, Base, Arbitrum, Polygon, Optimism, Celo, BNB, Gnosis, Linea, Scroll, Taiko, Avalanche, Mantle, Metis, Abstract, Monad)
-- Wallet: arcabot.eth (set via `PRIVATE_KEY` env var)
+- Registered on 17 chains (Ethereum, Base, Arbitrum, Polygon, Optimism, Celo, BNB, Gnosis, Linea, Scroll, Taiko, Avalanche, Mantle, Metis, Abstract, Monad, X Layer)
+- Wallet: arcabot.eth
 - Base agent ID: #2376
 
 ---
@@ -389,7 +389,7 @@ console.log(info.registrations);    // cross-chain IDs
 ```typescript
 import { findAllRegistrations } from "@agent-stack/core";
 
-// Find all registrations for a wallet across all 16+ supported chains
+// Find all registrations for a wallet across all 17+ supported chains
 const regs = await findAllRegistrations("0x1be93C...");
 // Returns: [{ chainName: "Base", chainId: 8453, agentId: 2376, globalId: "eip155:8453:0x8004...#2376" }, ...]
 ```
