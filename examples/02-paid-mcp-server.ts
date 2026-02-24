@@ -14,8 +14,8 @@ import { z } from "zod";
 import { createAgentMcpServer } from "@agent-stack/data";
 import { USDC_BASE } from "@agent-stack/payments";
 
-const MY_WALLET = "0x1be93C700dDC596D701E8F2106B8F9166C625Adb";
-const MY_AGENT_ID = 2376;
+const MY_WALLET = process.env.PAYMENT_WALLET ?? "YOUR_WALLET_ADDRESS";
+const MY_AGENT_ID = Number(process.env.AGENT_ID ?? 0);
 
 async function fetchPrice(symbol: string): Promise<number> {
   // Mock price fetch — replace with real API

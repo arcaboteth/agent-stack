@@ -23,7 +23,7 @@ Commands:
 
 Examples:
   npx @agent-stack/identity verify "eip155:8453:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432#2376"
-  npx @agent-stack/identity lookup 0x1be93C700dDC596D701E8F2106B8F9166C625Adb
+  npx @agent-stack/identity lookup 0xYOUR_WALLET_ADDRESS
   npx @agent-stack/identity chains
 `;
 

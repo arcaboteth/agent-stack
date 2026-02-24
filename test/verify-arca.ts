@@ -9,7 +9,7 @@ import { verifyAgent, getMcpEndpoint, getAgentCount, parseAgentId } from "@agent
 
 const ARCA_BASE = "eip155:8453:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432#2376";
 const ARCA_ETH = "eip155:1:0x8004A169FB4a3325136EB29fA0ceB6D2e539a432#22775";
-const ARCA_WALLET = "0x1be93C700dDC596D701E8F2106B8F9166C625Adb";
+const ARCA_WALLET = process.env.TEST_WALLET ?? (() => { throw new Error("Set TEST_WALLET env var"); })();
 
 let passed = 0;
 let failed = 0;

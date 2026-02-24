@@ -340,7 +340,7 @@ await agent.stop();
 ### Our Deployments
 
 - Registered on 16 chains (Ethereum, Base, Arbitrum, Polygon, Optimism, Celo, BNB, Gnosis, Linea, Scroll, Taiko, Avalanche, Mantle, Metis, Abstract, Monad)
-- Wallet: `0x1be93C700dDC596D701E8F2106B8F9166C625Adb` (arcabot.eth)
+- Wallet: arcabot.eth (set via `PRIVATE_KEY` env var)
 - Base agent ID: #2376
 
 ---
