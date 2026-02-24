@@ -9,7 +9,7 @@ One package to rule three layers: identity, payments, data. Developers should be
 @a3stack/identity   — ERC-8004 registration + verification + discovery
 @a3stack/payments   — x402 client (paying) + server (receiving) helpers
 @a3stack/data       — MCP server/client with built-in identity + payment
-@a3stack/core       — The glue: AgentStack class that connects all three
+@a3stack/core       — The glue: A3Stack class that connects all three
 ```
 
 ---
@@ -208,12 +208,12 @@ const client = await createAgentMcpClient({ url: "https://mcp.agent.eth/" });
 
 ## @a3stack/core
 
-### All-in-One: AgentStack
+### All-in-One: A3Stack
 ```typescript
-import { AgentStack } from "@a3stack/core";
+import { A3Stack } from "@a3stack/core";
 
 // Full agent setup in one shot
-const agent = new AgentStack({
+const agent = new A3Stack({
   // Identity
   account,                           // viem Account (signing)
   chain: base,

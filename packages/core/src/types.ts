@@ -6,7 +6,7 @@ import type { Chain, Account } from "viem";
 import type { RegisterOptions } from "@a3stack/identity";
 import type { PaymentServerConfig, PaymentClientConfig } from "@a3stack/payments";
 
-export interface AgentStackConfig {
+export interface A3StackConfig {
   /**
    * viem Account (e.g. from privateKeyToAccount())
    * Must have signTransaction for on-chain write operations (register, setAgentURI)
@@ -26,7 +26,7 @@ export interface AgentStackConfig {
 
   /**
    * MCP Server configuration.
-   * If provided, this AgentStack instance can serve MCP tools.
+   * If provided, this A3Stack instance can serve MCP tools.
    */
   server?: {
     name: string;
@@ -44,7 +44,7 @@ export interface AgentStackConfig {
   payer?: Omit<PaymentClientConfig, "account">;
 }
 
-export interface AgentStackRegisterOptions extends RegisterOptions {
+export interface A3StackRegisterOptions extends RegisterOptions {
   /**
    * If true, auto-include the current MCP server URL in services.
    * Only valid if server.port is configured.

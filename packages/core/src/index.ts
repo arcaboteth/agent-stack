@@ -3,7 +3,7 @@
  * A3Stack SDK — identity + payments + data for AI agents
  *
  * The all-in-one glue layer. Import just what you need:
- *   import { AgentStack } from "@a3stack/core"
+ *   import { A3Stack } from "@a3stack/core"
  *
  * Or use individual packages for more control:
  *   import { AgentIdentity } from "@a3stack/identity"
@@ -12,7 +12,7 @@
  */
 
 // Main class
-export { AgentStack } from "./agent.js";
+export { A3Stack } from "./agent.js";
 
 // Re-export everything from sub-packages for convenience
 export {
@@ -70,4 +70,4 @@ export {
 
 export type { AgentMcpServerConfig, AgentMcpClientConfig, AgentProbeResult } from "@a3stack/data";
 
-export type { AgentStackConfig, AgentStackRegisterOptions } from "./types.js";
+export type { A3StackConfig, A3StackRegisterOptions } from "./types.js";

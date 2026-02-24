@@ -1,7 +1,7 @@
 /**
  * Example 4: Full A3Stack — identity + payments + MCP in one
  *
- * Demonstrates the AgentStack class, which combines all three layers.
+ * Demonstrates the A3Stack class, which combines all three layers.
  * This is the "zero config" path for building a complete agent service.
  *
  * Run:
@@ -11,7 +11,7 @@
 import { base } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 import { z } from "zod";
-import { AgentStack } from "@a3stack/core";
+import { A3Stack } from "@a3stack/core";
 import { USDC_BASE } from "@a3stack/payments";
 
 const PRIVATE_KEY = (process.env.PRIVATE_KEY ?? "") as `0x${string}`;
@@ -22,8 +22,8 @@ async function main() {
   console.log(`\n🤖 A3Stack Demo`);
   console.log(`   Wallet: ${account.address}`);
 
-  // ─── Initialize AgentStack ────────────────────────────────────────
-  const agent = new AgentStack({
+  // ─── Initialize A3Stack ────────────────────────────────────────
+  const agent = new A3Stack({
     account,
     chain: base,
     rpc: "https://mainnet.base.org",

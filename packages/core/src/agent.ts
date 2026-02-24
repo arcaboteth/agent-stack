@@ -1,5 +1,5 @@
 /**
- * AgentStack — the all-in-one glue layer
+ * A3Stack — the all-in-one glue layer
  * Combines identity + payments + data into one clean interface
  */
 
@@ -11,17 +11,17 @@ import { PaymentClient } from "@a3stack/payments";
 import { AgentMcpServerInstance, createAgentMcpClient, probeAgent } from "@a3stack/data";
 import type { AgentProbeResult } from "@a3stack/data";
 import type { AgentMcpClientInstance } from "@a3stack/data";
-import type { AgentStackConfig, AgentStackRegisterOptions } from "./types.js";
+import type { A3StackConfig, A3StackRegisterOptions } from "./types.js";
 
-export class AgentStack {
-  private config: AgentStackConfig;
+export class A3Stack {
+  private config: A3StackConfig;
   private identity: AgentIdentity;
   private payer: PaymentClient;
   private mcpServer?: AgentMcpServerInstance;
   private _agentId?: number;
   private _serverUrl?: string;
 
-  constructor(config: AgentStackConfig) {
+  constructor(config: A3StackConfig) {
     this.config = config;
 
     // Initialize identity manager
@@ -62,7 +62,7 @@ export class AgentStack {
    * Register this agent on-chain via ERC-8004.
    * Call this once to create your agent identity.
    */
-  async register(options: AgentStackRegisterOptions): Promise<{
+  async register(options: A3StackRegisterOptions): Promise<{
     agentId: number;
     txHash: `0x${string}`;
     globalId: string;
@@ -105,7 +105,7 @@ export class AgentStack {
   async start(port?: number): Promise<{ url: string }> {
     if (!this.mcpServer) {
       throw new Error(
-        "No server configured. Pass server config to AgentStack constructor."
+        "No server configured. Pass server config to A3Stack constructor."
       );
     }
     const result = await this.mcpServer.listen(port);
@@ -133,7 +133,7 @@ export class AgentStack {
     handler: (args: any) => Promise<any>
   ): void {
     if (!this.mcpServer) {
-      throw new Error("No server configured. Pass server config to AgentStack constructor.");
+      throw new Error("No server configured. Pass server config to A3Stack constructor.");
     }
     this.mcpServer.tool(name, description, paramsSchema, handler);
   }

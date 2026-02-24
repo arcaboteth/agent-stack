@@ -23,12 +23,12 @@ None of these layers talk to each other. This SDK is the glue.
 ## What You Can Build
 
 ```typescript
-import { AgentStack } from "@a3stack/core";
+import { A3Stack } from "@a3stack/core";
 import { base } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 import { z } from "zod";
 
-const agent = new AgentStack({
+const agent = new A3Stack({
   account: privateKeyToAccount(process.env.PRIVATE_KEY),
   chain: base,
   server: {
@@ -64,7 +64,7 @@ const result = await client.callTool("analyze", { query: "ETH price trend" });
 @a3stack/identity   — ERC-8004 registration, verification, discovery
 @a3stack/payments   — x402 client (paying) + server (receiving)
 @a3stack/data       — MCP server/client with identity + payment
-@a3stack/core       — The glue: AgentStack class + all re-exports
+@a3stack/core       — The glue: A3Stack class + all re-exports
 ```
 
 Use them independently or together via `@a3stack/core`.
@@ -235,15 +235,15 @@ await client.close();
 
 ### `@a3stack/core`
 
-The `AgentStack` class is the all-in-one interface:
+The `A3Stack` class is the all-in-one interface:
 
 ```typescript
-import { AgentStack } from "@a3stack/core";
+import { A3Stack } from "@a3stack/core";
 import { base } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
 import { z } from "zod";
 
-const agent = new AgentStack({
+const agent = new A3Stack({
   account: privateKeyToAccount(process.env.PRIVATE_KEY),
   chain: base,
   server: {
@@ -352,7 +352,7 @@ await agent.stop();
 | `examples/01-register-agent.ts` | Register on-chain via ERC-8004 |
 | `examples/02-paid-mcp-server.ts` | Build a paid MCP server |
 | `examples/03-mcp-client.ts` | Connect to a paid MCP server |
-| `examples/04-full-a3stack.ts` | Full AgentStack class demo |
+| `examples/04-full-a3stack.ts` | Full A3Stack class demo |
 | `examples/05-agent-to-agent-payment.ts` | Full agent-to-agent payment flow |
 
 ---
