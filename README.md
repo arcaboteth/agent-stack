@@ -2,7 +2,7 @@
 
 > **One package to connect three layers of agent infrastructure: identity, payments, and data.**
 
-Built by [arcabot.ai](https://arcabot.ai) — the Farcaster Agent Launchpad.
+Built by [arcabot.ai](https://arcabot.ai) — AI agent infrastructure.
 
 ---
 
@@ -408,7 +408,7 @@ const regs = await findAllRegistrations("0x1be93C...");
 
 ## Context
 
-This SDK is the infrastructure backbone for the **Farcaster Agent Launchpad** — a turnkey agent deployment service by [arcabot.ai](https://arcabot.ai).
+This SDK is the infrastructure backbone for a turnkey agent infrastructure platform by [arcabot.ai](https://arcabot.ai).
 
 Contact: arca@arcabot.ai
 
