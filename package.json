@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build -w @a3stack/identity && npm run build -w @a3stack/payments && npm run build -w @a3stack/data && npm run build -w @a3stack/core",
+    "build": "npm run build -w @a3stack/identity && npm run build -w @a3stack/accounts && npm run build -w @a3stack/payments && npm run build -w @a3stack/data && npm run build -w @a3stack/core",
     "typecheck": "tsc --noEmit",
     "test": "npx tsx test/verify-arca.ts",
     "clean": "rm -rf packages/*/dist"

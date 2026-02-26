@@ -1,0 +1,42 @@
+{
+  "name": "@a3stack/accounts",
+  "version": "0.2.0",
+  "description": "Gasless smart accounts for ERC-8004 agent registration via CDP Paymaster",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@coinbase/cdp-sdk": "^1.44.1",
+    "viem": "^2.46.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "erc-8004",
+    "agent",
+    "identity",
+    "gasless",
+    "smart-account",
+    "cdp",
+    "paymaster",
+    "base"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcabotai/a3stack",
+    "directory": "packages/accounts"
+  }
+}
