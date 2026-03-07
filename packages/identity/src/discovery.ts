@@ -11,8 +11,8 @@
 // ag0 SDK types are re-exported with A3Stack naming for consistency
 
 export interface DiscoveredAgent {
-  /** Cross-chain ID format: "{chainId}:{agentId}" */
-  id: string;
+  /** Cross-chain ID format: "{chainId}:{agentId}" (ag0 field: agentId) */
+  agentId: string;
   name: string;
   description: string;
   image?: string;
@@ -156,12 +156,25 @@ export class AgentDiscovery {
 
   /**
    * Load a specific agent by ID ("{chainId}:{agentId}")
+   *
+   * Note: ag0's loadAgent returns an Agent class instance, not plain data.
+   * We use searchAgents with a targeted query for consistent DiscoveredAgent output.
+   * Falls back to loadAgent if search doesn't find it.
    */
   async getAgent(agentId: string): Promise<DiscoveredAgent | null> {
     await this.init();
     try {
+      // Try search first — returns consistent DiscoveredAgent shape
+      const [chainId, id] = agentId.split(":");
+      const results = await this.sdk.searchAgents({});
+      const match = results.find(
+        (a: any) => a.agentId === agentId
+      );
+      if (match) return match as DiscoveredAgent;
+
+      // Fallback: loadAgent returns Agent class, extract what we can
       const agent = await this.sdk.loadAgent(agentId);
-      return agent as DiscoveredAgent;
+      return agent as unknown as DiscoveredAgent;
     } catch {
       return null;
     }
