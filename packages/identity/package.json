@@ -1,6 +1,6 @@
 {
   "name": "@a3stack/identity",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ERC-8004 agent identity registration, verification, and discovery",
   "type": "module",
   "main": "./dist/index.cjs",

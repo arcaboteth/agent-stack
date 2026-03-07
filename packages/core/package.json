@@ -1,7 +1,7 @@
 {
   "name": "@a3stack/core",
-  "version": "0.1.0",
-  "description": "A3Stack SDK — identity + payments + data for AI agents",
+  "version": "0.2.0",
+  "description": "A3Stack SDK \u2014 identity + payments + data for AI agents",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
